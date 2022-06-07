@@ -9,18 +9,22 @@ using UnityEditor;
 public class SceneController : MonoBehaviour
 {
     public void LoadMenu(){
+        //Load Menu Scene
         SceneManager.LoadScene(0);
     }
 
     public void LoadMain(){
+        //Load GameplayScene
         SceneManager.LoadScene(1);
     }
 
     public void LoadScores(){
+        //Load Score Table Scene
         SceneManager.LoadScene(2);
     }
 
     public void QuitGame(){
+        //Save current High Scores in a Json File and close the game
         MenuManager.Instance.SaveHighScore();
     #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();

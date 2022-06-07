@@ -9,6 +9,7 @@ public class ScoreUIHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Display Scores
         scoreText.text = MenuManager.Instance.GetScoreBoardString();
     }
 }

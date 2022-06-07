@@ -37,6 +37,7 @@ public class MainManager : MonoBehaviour
                 brick.onDestroyed.AddListener(AddPoint);
             }
         }
+        //Display high Score on top of screen
         ScoreText.text = $"{MenuManager.Instance.playerName}: Score";
         if(MenuManager.Instance.bestScore != null){
             BestScoreText.text = "Best Score - " + MenuManager.Instance.bestScore.name + ": " + MenuManager.Instance.bestScore.score;
@@ -78,6 +79,7 @@ public class MainManager : MonoBehaviour
     public void GameOver()
     {
         m_GameOver = true;
+        //Add High score to list if it is on the top 10
         MenuManager.Instance.UpdateHighScore(m_Points);
         BestScoreText.text = "Best Score - " + MenuManager.Instance.bestScore.name + ": " + MenuManager.Instance.bestScore.score;
         GameOverText.SetActive(true);
